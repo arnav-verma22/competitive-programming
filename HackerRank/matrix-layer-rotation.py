@@ -7,6 +7,12 @@ import sys
 
 # Complete the matrixRotation function below.
 def matrixRotation(matrix, r):
+    mat = matrix[1:3][1:3]
+    print(mat)
+    print(matrix)
+    rows = len(matrix)
+    columns = len(matrix[0])
+
 
 
 
