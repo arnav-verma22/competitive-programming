@@ -4,6 +4,23 @@ import random
 import re
 import sys
 
+def rotate(matrix, k, l, r, c):
+    i = k
+    j = l
+    temp = matrix[i][j]
+    while j < c - 1:
+        matrix[i][j] = matrix[i][j+1]
+        j += 1
+    while i < r - 1:
+        matrix[i][j] = matrix[i+1][j]
+        i += 1
+    while j > 0:
+        matrix[i][j] = matrix[i][j-1]
+        j -= 1
+    while i > 0:
+        matrix[i][j] = matrix[i-1][j]
+        i -= 1
+    matrix[i+1][j] = temp
 
 # Complete the matrixRotation function below.
 def matrixRotation(matrix, r):
