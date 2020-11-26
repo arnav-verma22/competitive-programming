@@ -25,7 +25,7 @@ def rotate(matrix, k, l, r, c):
 # Complete the matrixRotation function below.
 def matrixRotation(matrix, r):
     # print(matrix)
-
+    for z in range(r):
         rows = len(matrix)
         columns = len(matrix[0])
         i = 0
