@@ -14,10 +14,10 @@ def rotate(matrix, k, l, r, c):
     while i < r - 1:
         matrix[i][j] = matrix[i+1][j]
         i += 1
-    while j > 0:
+    while j > l:
         matrix[i][j] = matrix[i][j-1]
         j -= 1
-    while i > 0:
+    while i > k:
         matrix[i][j] = matrix[i-1][j]
         i -= 1
     matrix[i+1][j] = temp
