@@ -37,8 +37,10 @@ def matrixRotation(matrix, r):
             rows -= 1
             columns -= 1
 
+    #printing the matrix
     for row in matrix:
         print(*row, sep=' ')
+
 
 
 if __name__ == '__main__':
