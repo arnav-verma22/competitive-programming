@@ -7,6 +7,8 @@ import sys
 def rotate(matrix, k, l, r, c):
     i = k
     j = l
+    #right to left
+
     temp = matrix[i][j]
     while j < c - 1:
         matrix[i][j] = matrix[i][j+1]
