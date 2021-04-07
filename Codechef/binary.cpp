@@ -19,7 +19,7 @@ int binary(int x)
     return x;
 }
 
-bool isSubSequence(char str1[], char str2[],
+bool isSubSequence(string str1, string str2,
                                  int m, int n)
 {
      
@@ -47,6 +47,17 @@ int main()
     for(int i; i < 20; i++)
         cout<<i<<" - "<<binary(i)<<endl;
     
-    
-    
+    stringstream ss, sk;
+    string x, y; 
+    ss << 1001011;
+    ss >> x;
+    sk << binary(11);
+    sk >> y;
+
+    cout<<x<<" "<<y<<endl;
+
+    if(isSubSequence(y, x, y.length(), x.length()))
+        cout<<"True";
+    else
+        cout<<"False";
 }
