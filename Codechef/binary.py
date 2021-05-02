@@ -9,15 +9,16 @@ def binary(x):
     x = int("".join(bl))
     return x
 
-def check_subseq(s, b):
-    x = 0
-    for i in b:
-        if i in s:
-            x = s.index(i) + 1
-            s = s[x:len(s)]
-        else:
-            return False
-    return True
+def check_subseq(str1, str2, m, n):
+    if m == 0:
+        return True
+    if n == 0:
+        return False;
+ 
+    if str1[m - 1] == str2[n - 1]:
+        return check_subseq(str1, str2, m - 1, n - 1)
+ 
+    return check_subseq(str1, str2, m, n - 1)
 
 for i in range(15):
-    print(i, ' - ', binary(i), ' - ', check_subseq('1001011', str(binary(i))))
+    print(i, ' - ', binary(i), ' - ', check_subseq(str(binary(i)), '1001011',len(str(binary(i))) , len('1001011')))

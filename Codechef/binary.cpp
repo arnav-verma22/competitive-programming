@@ -13,7 +13,7 @@ int binary(int x)
         x = x - pow(2, y);   
     }
     stringstream ss;
-    for (unsigned i = 0; i < 9; ++i)
+    for (unsigned i = 0; i < 9; ++i) 
         ss << bl[i];
     ss >> x;
     return x;
@@ -43,21 +43,15 @@ int main()
 {
     //string name, surname;
     //int bl[9] = {0};
-    //cin>>name>>surname;
-    for(int i; i < 20; i++)
-        cout<<i<<" - "<<binary(i)<<endl;
-    
-    stringstream ss, sk;
-    string x, y; 
-    ss << 1001011;
-    ss >> x;
-    sk << binary(11);
-    sk >> y;
-
-    cout<<x<<" "<<y<<endl;
-
-    if(isSubSequence(y, x, y.length(), x.length()))
-        cout<<"True";
-    else
-        cout<<"False";
+    //cin>>name>>surname;    
+    for(int i; i < 15; i++)
+    {
+        stringstream ss, sk;
+        string x, y; 
+        ss << 1001011;
+        ss >> x;
+        sk << binary(i);
+        sk >> y;
+        cout<<i<<" - "<<binary(i)<<" - "<<isSubSequence(y, x, y.length(), x.length())<<endl;
+    }
 }
