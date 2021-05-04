@@ -5,5 +5,8 @@
         "bitset": "cpp",
         "string_view": "cpp",
         "iosfwd": "cpp"
-    }
+    },
+    "java.project.sourcePaths": [
+        "Codechef"
+    ]
 }
