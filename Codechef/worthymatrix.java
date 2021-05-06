@@ -4,32 +4,54 @@ class worthymatrix
 {
     public static int submatrix_sum(int matrix[][], int x, int y, int l)
     {
-        int sum = matrix[x+l][y+l] + matrix[x-1][y-1] - matrix[x+l][y-1] + matrix[x-1][y+l];
-        return sum/(matrix.length)^2;
+        int sum = matrix[x+l][y+l] + matrix[x-1][y-1] - matrix[x+l][y-1] - matrix[x-1][y+l];
+        int size = (l+1)*(l+1), avg = sum/size;
+        return avg;
     }
     public static int find_min_l(int matrix[][], int x, int y, int k)
     {
-        int l = 0, r = Math.min(matrix.length - x, matrix[1].length - y) - 1, max_size = r+1, mid = 0;
+        int l = 0, r = Math.min(matrix.length - x, matrix[1].length - y) - 1, max_size = r+1, mid = 0, avg = submatrix_sum(matrix, x, y, l);
         boolean any_worthy = false;
         System.out.println("for "+x+", "+y+" max possible length: "+max_size);
-        while(mid != r)
-        {
-            mid = (l+r+1)/2;
-            System.out.println(" mid: " + mid);
-            if(submatrix_sum(matrix, x, y, mid) >= k)
-            {
-                r = mid;
-                any_worthy = true;
-            }
-            else if(submatrix_sum(matrix, x, y, mid) < k)
-                l = mid;
 
+        if(avg >= k)
+        {
+            System.out.println("with l = 0 avg is "+ avg);
+            any_worthy = true;
         }
-        System.out.println("min l: " + mid+ "worthy matrices: "+ (max_size - mid));
-        if(any_worthy)
-            return max_size - mid;
+
         else
+        {
+            while(mid != r)
+            {
+                mid = (l+r+1)/2;
+                System.out.println(" with l = : " + mid);
+                avg = submatrix_sum(matrix, x, y, mid);
+                if(avg >= k)
+                {
+                    System.out.println(" is worthy cuz avg is "+ avg);
+                    r = mid;
+                    any_worthy = true;
+                }
+                else if(avg < k)
+                {
+                    l = mid;
+                    System.out.println(" is not worthy cuz avg is "+ avg);
+                }
+
+            }
+        }
+        
+        if(any_worthy)
+        {
+            System.out.println("min l: " + mid+ "worthy matrices: "+ (max_size - mid));
+            return max_size - mid;
+        }    
+        else
+        {
+            System.out.println("min l: " + mid+ "worthy matrices: 0");
             return 0;
+        }
     }
     public static void main(String Args[]) 
     {
