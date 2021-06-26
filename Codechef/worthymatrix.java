@@ -12,11 +12,11 @@ class worthymatrix
     {
         int l = 0, r = Math.min(matrix.length - x, matrix[1].length - y) - 1, max_size = r+1, mid = 0, avg = submatrix_sum(matrix, x, y, l);
         boolean any_worthy = false;
-        System.out.println("for "+x+", "+y+" max possible length: "+max_size);
+        //System.out.println("for "+x+", "+y+" max possible length: "+max_size);
 
         if(avg >= k)
         {
-            System.out.println("with l = 0 avg is "+ avg);
+            //System.out.println("with l = 0 avg is "+ avg);
             any_worthy = true;
         }
 
@@ -25,18 +25,18 @@ class worthymatrix
             while(mid != r)
             {
                 mid = (l+r+1)/2;
-                System.out.println(" with l = : " + mid);
+                //System.out.println(" with l = : " + mid);
                 avg = submatrix_sum(matrix, x, y, mid);
                 if(avg >= k)
                 {
-                    System.out.println(" is worthy cuz avg is "+ avg);
+                    //System.out.println(" is worthy cuz avg is "+ avg);
                     r = mid;
                     any_worthy = true;
                 }
                 else if(avg < k)
                 {
                     l = mid;
-                    System.out.println(" is not worthy cuz avg is "+ avg);
+                    //System.out.println(" is not worthy cuz avg is "+ avg);
                 }
 
             }
@@ -44,12 +44,12 @@ class worthymatrix
         
         if(any_worthy)
         {
-            System.out.println("min l: " + mid+ "worthy matrices: "+ (max_size - mid));
+            //System.out.println("min l: " + mid+ "worthy matrices: "+ (max_size - mid));
             return max_size - mid;
         }    
         else
         {
-            System.out.println("min l: " + mid+ "worthy matrices: 0");
+            //  System.out.println("min l: " + mid+ "worthy matrices: 0");
             return 0;
         }
     }
@@ -88,12 +88,12 @@ class worthymatrix
             System.out.println(worthy_matrix);
 
 
-            for(int i = 0;i <= n; i++)
+            /*for(int i = 0;i <= n; i++)
             {
                 for(int j = 0;j <= m; j++)
                     System.out.print(matrix[i][j] + " ");
                 System.out.println();
-            }
+            }*/
         }
         
     }   
