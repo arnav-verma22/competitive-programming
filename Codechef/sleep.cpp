@@ -12,7 +12,10 @@ int main()
     for(int i = 0;i < n;i++)
     {
         int l, h;
+        string s;
         cin>>l;
-        cin>>h;        
+        cin>>h;
+        cin>>s;
+        cout<<l<<h<<s<<endl;      
     }
 }
