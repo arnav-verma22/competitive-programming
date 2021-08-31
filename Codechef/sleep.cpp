@@ -16,6 +16,6 @@ int main()
         cin>>l;
         cin>>h;
         cin>>s;
-        cout<<l<<h<<s<<endl;      
+        cout<<l<<h<<s<<endl;
     }
 }
