@@ -5,7 +5,7 @@ using namespace std;
 and the no. of steps you can take is based on dice i.e max 6 & min 1
 so if you notice no of ways from 0th pos to 3rd pos is sum of no. of ways from(1-3,2-3,3-3)
 and then we can apply recursion, its somewhat like fibonaci
-if you didnt understand refer
+if you didnt understand refer 
 https://www.youtube.com/watch?v=9rt-hFcXd0M&list=PLfqMhTWNBTe0b2nM6JHVCnAkhQRGiZMSJ&index=43
 */
 
