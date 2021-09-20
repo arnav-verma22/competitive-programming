@@ -1,4 +1,4 @@
-import java.util.*;
+//import java.util.*;
 class isarrsorted
 {
     public static boolean isarraysorted(int arr[], int n)

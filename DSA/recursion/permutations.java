@@ -1,5 +1,5 @@
 //package recursion;
-import java.util.*;
+
 
 public class permutations {
     static void permutation(String s, String ans)
