@@ -1,4 +1,3 @@
-
 class Ratinmaze{
 
     static boolean isValid(int[][] maze, int x, int y, int n)

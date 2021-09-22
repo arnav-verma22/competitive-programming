@@ -3,10 +3,17 @@ public class Nquuen {
     static boolean canPlace(int[][] board, int x, int y, int n)
     {
         for (int i = 1; i < board.length; i++) {
-            if (board[x+i][y] == 1 || board[x][y+i] == 1 || board[x+i][y+i] == 1)
+            try {
+                if (board[x+i][y] == 1 || board[x][y+i] == 1 || board[x+i][y+i] == 1 
+                    )
             {
                 return false;
             }
+
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
+            
         }
         
         return true;
@@ -34,5 +41,20 @@ public class Nquuen {
     }
     public static void main(String[] args) {
         
+        int[] arr = {1,2,3,3,4,5,6};
+        try {
+
+            if (arr[6] == 6) {
+                System.out.println("true");
+            }
+            if(arr[7] == 8 )
+            {
+                System.out.println("true");
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 }
