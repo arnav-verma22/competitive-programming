@@ -9,37 +9,49 @@ public class MergeSort {
         System.out.println();
     }
     
-    static void merge(int[] arr1, int[] arr2)
+    static int[] merge(int[] arr1, int[] arr2)
     {
         int[] sorted = new int[arr1.length+arr2.length];
         int i = 0, j = 0;
-        while(true)
+        while(i != arr1.length || j != arr2.length)
         {
+            //System.out.println(i+" "+j);
             if(i == arr1.length)
             {
-                sorted[i+j] = arr2[i];
+                //System.out.println(arr2[j]);
+                sorted[i+j] = arr2[j];
                 j++;
+                continue;
             }
-            
+            if(j == arr2.length)
+            {
+                //System.out.println(arr1[i]);
+                sorted[i+j] = arr1[i];
+                i++;
+                continue;
+            }
 
             if(arr1[i] < arr2[j])
             {
                 sorted[i+j] = arr1[i];
                 i++;
+                continue;
             }
             if(arr1[i] > arr2[j])
             {
-                sorted[i+j] = arr2[i];
+                sorted[i+j] = arr2[j];
                 j++;
             }
         }
+        //show(sorted);
+        return sorted;
     }
 
-    static void sort(int[] arr)
+    static int[] sort(int[] arr)
     {
         //show(arr);
         if (arr.length == 1) {
-            return;
+            return arr;
         }
 
         int n = arr.length;
@@ -51,18 +63,22 @@ public class MergeSort {
 
         show(b);
         show(c);
-        sort(b);
+        int[] sorted1 = sort(b);
         
-        sort(c);
+        int[] sorted2 = sort(c);
         
         
-        merge(b, c);
-
+        int[] merged = merge(sorted1, sorted2);
+        show(merged);
+        return merged;
 
     }
     public static void main(String[] args) {
         
         int[] array = {6,3,9,5,2,8,7,1};
-        sort(array);
+        //int[] arr1 = {3,5,6,9};
+        //int[] arr2 = {1,2,7,8};
+        show(sort(array));
+        //merge(arr1, arr2);
     }
 }
