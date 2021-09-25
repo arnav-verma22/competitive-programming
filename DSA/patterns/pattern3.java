@@ -18,13 +18,14 @@ public class pattern3 {
         String str = middlepattern(n-1);
         String[] arrOfStr = str.split(" ");
 
-        String res = "";
-        for (int i=0; i<arrOfStr.length; i++)
+        String mid = "";
+        for (int i=0; i<arrOfStr.length - 1; i++)
         {
-            
+            int sum = Integer.parseInt(arrOfStr[i]) + Integer.parseInt(arrOfStr[i+1]);
+            mid += sum + " ";
         }
-
-        return str;
+        String res = "1 " + mid + "1";
+        return res;
     }
 
     static void pattern(int n)
@@ -35,20 +36,20 @@ public class pattern3 {
             {
                 System.out.print(" ");
             }
+            if(i == 1)
+                System.out.print("1");
+            
+            else   
+                System.out.print(middlepattern(i-1));
 
 
             System.out.println();
         }
     }
     public static void main(String args[]) 
-    {
-        //pattern(5);    
-        
-        String str = "geekss for geekss ";
-        String[] arrOfStr = str.split(" ");
-  
-        for (String a : arrOfStr)
-            System.out.println(a);
+    {       
+        //System.out.println(middlepattern(4));
+        pattern(8);
         
     }
 }
