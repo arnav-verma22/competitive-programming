@@ -23,10 +23,11 @@ public class io {
         list.add(51);  
         list.add(1);  
         int max = list.get(0), min = list.get(2);*/
+        sc.nextLine();
+        String x = sc.nextLine();
+        int y = sc.nextInt();
         
-        int i = 5/2;
-        
-        System.out.println(i);
+        System.out.println(n + x + y); 
 
     }
 }
