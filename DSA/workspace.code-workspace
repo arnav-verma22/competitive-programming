@@ -6,6 +6,12 @@
 	],
 	"settings": {
 		"liveServer.settings.multiRootWorkspaceName": "js",
-		"liveServer.settings.port": 5501
+		"liveServer.settings.port": 5501,
+		"java.project.sourcePaths": [
+			".",
+			"DSA",
+			"DSA\\patterns",
+			"DSA\\gfg practice"
+		]
 	}
 }
