@@ -17,6 +17,7 @@ public class CountScore {
             stk.push(1);
             for (int i = 1; i < scores.length; i++)
             {
+                
                 if(scores[i] >= scores[stk.peek()-1])
                     stk.push(i+1);
                 else
