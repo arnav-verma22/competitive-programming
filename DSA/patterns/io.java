@@ -3,7 +3,7 @@ public class io {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        
         // int m = sc.nextInt();
 
         /*int[] arr = new int[n];
@@ -23,11 +23,9 @@ public class io {
         list.add(51);  
         list.add(1);  
         int max = list.get(0), min = list.get(2);*/
-        sc.nextLine();
-        String x = sc.nextLine();
-        int y = sc.nextInt();
+        float f = null;
         
-        System.out.println(n + x + y); 
+        System.out.println(f); 
 
     }
 }

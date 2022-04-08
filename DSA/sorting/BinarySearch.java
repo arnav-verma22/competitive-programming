@@ -8,16 +8,31 @@ public class BinarySearch {
         int index = n/2;
         int s = 0, e = n;
 
-        if(arr[index] > x)
-
-        if(arr[index] < x)
-            index += ;
-        if(arr[index] == x)
-            return index;
+        while (arr[index] != x) {
+            System.out.println(index);
+            if(arr[index] > x)
+            {
+                System.out.println("inside index > x");
+                e = index;
+                index = (s+e)/2;
+                
+                continue;
+                
+            }
+            else if(arr[index] < x)
+            {
+                System.out.println("inside index < x");
+                s = index;
+                index = (s+e)/2;
+                
+                
+            }
+        }
         
         return index;
     }
     public static void main(String[] args) {
-        int arr[] = { 2, 3, 4, 10, 40 };
+        int arr[] = { 2, 3, 4, 7, 10, 15, 17, 23, 40 };
+        System.out.println(search(arr, 17));
     }
 }
